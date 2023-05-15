@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Szpital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.4.5/spectre.min.css" integrity="sha512-ixkV1XQlIe5qFmlGKThyYFBm14zZe2j2Rn/Pl+xNKCQxsPviyGFCE6I9LLx8H57quHN5pgGh0jVrlE+sv/satQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../Style.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+</head>
+<style>
+    b-col{
+        margin:20px;
+    }
+    .wrapper {
+        height: 100vh;
+        display: flex;
+
+        /* Direction of the items, can be row or column */
+        flex-direction: column;
+    }
+    .wrapper {
+        height: 100vh;
+        display: flex;
+
+        /* Direction of the items, can be row or column */
+        flex-direction: column;
+    }
+    h3{
+        display: inline-block;
+    }
+</style>
+<body>
+<div class="wrapper">
+    <header>
+        <div>
+
+        </div >
+       <nav class="nav-wrapper">
+                   <h1 style="padding: 10px 25px">Szpital</h1>
+                   <ul>
+                       <li><a href="/">Strona główna</a></li>
+                       <li><a href="/employees">Pracownicy</a></li>
+                       <li><a href="/dept">Oddziały</a></li>
+                       <li><a href="/patients">Pacjenci</a></li>
+                       <li><a href="/employments">Zatrudnienie</a> </li>
+                   </ul>
+                   <img src="../logo.png">
+               </nav>
+
+    </header>
+    <main>
+
+        <br><br>
+
+        <div class="table">
+
+            <div class="tableAdd">
+                <h2 class="titleContent" id="demo">Pacjent</h2>
+
+                <div>
+                    <h3>Id:</h3><input value="1" disabled>
+
+                    <h3>Imie:</h3><input value="piotr" disabled>
+
+                    <h3>Nazwisko:</h3><input value="Dubkowski" disabled>
+
+                    <h3>Pesel:</h3><input value="23232323121" disabled>
+
+                    <h3>Adres:</h3><input value="Matrymonalnia 31" disabled>
+                </div>
+            </div>
+
+            <div class="buttons">
+
+                <a class="addButtonA"  type="submit"  href="./SzpitalPacjenci.html"> Powrót </a>
+
+            </div>
+
+
+            <div id="table-wrapper">
+                <div id="table-scroll">
+                    <h2 class="titleContent" id="doctors">Lekarze</h2>
+                    <table  id="tableShowDep" >
+                        <thead>
+                            <tr>
+                                <td>Departament</td>
+                                <td>Lekarz</td>
+                                <td>Data od</td>
+                                <td>Data do</td>
+                                <td>Akcje</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Chirurgia</td>
+                            <td>Adam Pietrowski</td>
+                            <td>2000-01-01</td>
+                            <td>2000-05-10</td>
+                            <td><a class="detailsButton" href="../Lekarze/WorkersDetails.html"> Szczegóły</a><a class="detailsButton" href="#"> Edytuj</a><a class="detailsButton" href="#"> Usuń</a></td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <h2 class="titleContent" id="dept">Oddziały</h2>
+                    <table  class="tableShowDep" >
+                        <thead>
+                        <tr>
+                            <td> ID </td>
+                            <td> Imie </td>
+                            <td> Nazwisko </td>
+                            <td> Email </td>
+                            <td>Akcje</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td> 1 </td>
+                            <td> Adam </td>
+                            <td> Pietrowski </td>
+                            <td> Adam.Pietrowski@wp.pl</td>
+                            <td><a class="detailsButton" href="../Oddziały/OddzialDetails.html"> Szczegóły</a><a class="detailsButton" href="#"> Edytuj</a><a class="detailsButton" href="#"> Usuń</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="bottomList">
+            <nav class="bottomWrapper">
+                Piotr Żmuda s21588
+            </nav>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

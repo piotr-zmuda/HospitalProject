@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Szpital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.4.5/spectre.min.css" integrity="sha512-ixkV1XQlIe5qFmlGKThyYFBm14zZe2j2Rn/Pl+xNKCQxsPviyGFCE6I9LLx8H57quHN5pgGh0jVrlE+sv/satQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../Style.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="../JS/WorkerJS.js" type="text/javascript"></script>
+</head>
+<style>
+    .wrapper {
+        height: 100vh;
+        display: flex;
+
+        /* Direction of the items, can be row or column */
+        flex-direction: column;
+    }
+    .tabele{
+
+        width:100%;
+        height:100%;
+    }
+</style>
+<body style="margin: 0px">
+<div class="wrapper">
+    <header>
+        <div>
+
+        </div >
+        <nav class="nav-wrapper">
+            <h1 style="padding: 10px 25px">Szpital</h1>
+            <ul>
+                <li><a href="/">Strona główna</a></li>
+                <li><a href="/employees">Pracownicy</a></li>
+                <li><a href="/dept">Oddziały</a></li>
+                <li><a href="/patients">Pacjenci</a></li>
+                <li><a href="/employments">Zatrudnienie</a> </li>
+            </ul>
+            <img src="../logo.png">
+        </nav>
+
+    </header>
+    <main>
+        <div class="table">
+            <form action="<%=formAction%>" method="post" novalidate onsubmit="return validateForm();">
+                <div class="tableAdd">
+                    <h2 class="titleContent" id="demo"><%= pageTitle%></h2>
+
+                    <div>
+
+                        <select id="employee" name="emp_Id" required <%= (formMode == 'showDetails') ? 'disabled' : ''%>>
+                        <option value="" selected> === Wybierz Pracownika ===</option>
+                        <% for (let i=0; i < allEmps.length; i++) { let emp = allEmps[i];%>
+                        <option value="<%=emp._id%>" label="<%= emp.Imie + " " + emp.Nazwisko%>">
+                            <%=(employment._id && emp._id.toString() == employment.employee._id.toString()) ? 'selected' : ''%>
+                        </option>
+
+                        <% } %>
+                        </select>
+
+                        <select id="dept" name="dept_Id" required <%= (formMode == 'showDetails') ? 'disabled' : ''%>>
+                            <option value="" selected> === Wybierz Oddział ===</option>
+                            <% for (let i=0; i < allDepts.length; i++) { let emp = allDepts[i];%>
+                            <option value="<%=emp._id%>" label="<%= emp.Nazwa + " " + emp.Budzet%>">
+                                <%=(employment._id && emp._id.toString() == employment.Oddział._id.toString()) ? 'selected' : ''%>
+                            </option>
+
+                            <% } %>
+                        </select>
+                        <input type="number" placeholder="salary" name="salary" value=""/>
+                        <input type="date" placeholder="Od kiedy" name="dateFrom" value=""/>
+                        <input type="date" placeholder="Do kiedy" name="dateTo" value=""/>
+                    </div>
+
+
+                </div>
+                <div style="color: #de2a60; text-align: center; margin-top:3rem; font-size: 1.5rem" id="errorText">
+
+                </div>
+                <div class="buttons">
+
+                    <button class="addButton"  type="submit" value="Submit"> Dodaj Zatrudnienie </button>
+
+                    <a class="addButtonA"  type="submit"  href="/employments"> Powrót </a>
+
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="bottomList">
+            <nav class="bottomWrapper">
+                Piotr Żmuda s21588
+            </nav>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

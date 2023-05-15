@@ -1,0 +1,255 @@
+header{
+    background-color: #42cfc1;
+    font-family: Poppins;
+    height: auto;
+}
+header h1{
+    float: left;
+}
+header .topList{
+    text-align: center;
+}
+header img{
+    float: right;
+    height: 100px;
+    width: 100px;
+}
+footer {
+    background-color: lightslategray;
+    display: flex;
+    font-family: Poppins;
+}
+main {
+    flex: 1;
+    background-color: #a2bff2;
+    height: 75%;
+    display: flex;
+    font-family: Poppins;
+    overflow-y: scroll;
+}
+
+input{
+    border-radius: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 7px 7px;
+    border: 1px solid grey;
+    box-shadow:-0.5em 0 1em #44b9eb;
+    margin: .5rem .5rem;
+
+}
+input:invalid{
+    border-radius: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 7px 7px;
+    border: 1px solid grey;
+    box-shadow:-0.5em 0 1em #e05822;
+    margin: .5rem .5rem;
+}
+input:focus{
+    outline: #03cffc;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9rem;
+    text-align: center;
+}
+table thead tr{
+    background-color: #009879;
+    color: white;
+    font-weight: bold;
+    border-bottom: 1px solid #a2bff2;
+}
+table thead td{
+    border-bottom: 1px solid black;
+}
+.tableShowDep{
+    overflow: auto;
+    max-height: 400px;
+}
+table th, .tableShowDep td{
+    padding: 12px 15px;
+}
+table th, .tableShowDep td button{
+    padding: 12px 15px;
+}
+table tbody tr, .tableShowDep tbody td{
+    border-bottom: 3px solid mediumseagreen;
+
+}
+
+.table td{
+    border: 0;
+}
+
+.titleContent{
+    padding: 1rem 2rem;
+    text-align: center;
+    color: gold;
+}
+/*top nav bar*/
+.nav-wrapper{
+    text-align:  center;
+}
+.nav-wrapper ul{
+    float: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 0.8rem 0.8rem 0.8rem 0.8rem;
+    text-align: center;
+
+}
+.nav-wrapper li{
+    display: inline-block;
+    align-content: center;
+    text-align: center;
+    padding: .5rem .5rem;
+}
+.nav-wrapper li a{
+    color: white;
+    text-align: center;
+    padding: 20px 40px;
+    text-decoration: none;
+}
+.nav-wrapper li a:hover{
+    border-bottom: solid 2px cornflowerblue;
+}
+/*bottom nav bar*/
+.bottomWrapper{
+    text-align:  center;
+    color: wheat;
+}
+.bottomWrapper ul{
+    float: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 0.8rem 0.8rem 0.8rem 0.8rem;
+    text-align: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.bottomWrapper li{
+    display: inline-block;
+    align-content: center;
+    text-align: center;
+    padding: .5rem .5rem;
+}
+.bottomWrapper li a{
+    color: white;
+    text-align: center;
+    padding: 20px 40px;
+    text-decoration: none;
+
+}
+.bottomWrapper li a:hover{
+    border-bottom: solid 2px mediumseagreen;
+    text-decoration: none;
+    cursor: pointer;
+}
+/**/
+.bottomList{
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    height: 100%;
+}
+
+
+
+.tableAdd{
+    text-align: center;
+}
+
+/*przyciski*/
+.buttons{
+    align-content: center;
+    justify-content: space-around;
+    text-align: center;
+    padding: 3rem 3rem;
+
+}
+.addButton{
+    width: 200px; height: 50px; font-size:20px; background-color: #407fed; color: #3ed68f; border-radius: 10px; border: 2px solid #44b9eb;margin: 0 2rem;  cursor: pointer; vertical-align: center;
+}
+.addButton:hover{
+    background-color: #44b9eb; color:whitesmoke; border: 2px solid #407fed; text-decoration: none;
+}
+.addButtonA{
+    width: 180px; height: 36px; font-size:20px; background-color: royalblue; color: #3ed68f; border-radius: 10px; border: 2px solid #44b9eb;  margin: 0 2rem; cursor: pointer; vertical-align: center;
+}
+.addButtonA:hover{
+    background-color: #44b9eb; color:whitesmoke; border: 2px solid #407fed; text-decoration: none;
+}
+
+.detailsButton{
+    width: 200px;  font-size:20px; background-color: #407fed; color: #3ed68f; border-radius: 10px; border: 2px solid #44b9eb; padding: .2rem .5rem;
+}
+.detailsButton:hover{
+    background-color: #44b9eb; color:whitesmoke; border: 2px solid #407fed; cursor: pointer; text-decoration: none;
+}
+/**/
+#table-wrapper {
+    position:relative;
+    height: 50%;
+    display: grid;
+}
+.table-scroll table{
+    overflow-y:auto;
+    height: auto;
+    width: 50%;
+}
+
+
+
+
+
+
+@media(max-width: 1150px) {
+
+    header h1{
+        text-align: center;
+        float: none;
+    }
+    header img {
+        opacity: 0;
+        height: 0;
+        width: 0;
+    }
+    #table-wrapper {
+        position:relative;
+        height: 35%;
+    }
+}
+@media(max-width: 491px){
+    table thead {
+        display: none;
+      }
+      table td {
+        display: flex;
+      }
+      
+      table td::before {
+        content: attr(label);
+        font-weight: bold;
+        width: 120px;
+        min-width: 120px;
+      }
+    .addButton{
+        width: 200px; height: 50px; font-size:20px; background-color: #407fed; color: #3ed68f; border-radius: 10px; border: 2px solid #44b9eb;margin:0; cursor: pointer; vertical-align: center;
+    }
+    .addButtonA{
+    width: 200px; height: 36px; font-size:20px; background-color: royalblue; color: #3ed68f; border-radius: 10px; border: 2px solid #44b9eb;  margin: 1rem 0; cursor: pointer; vertical-align: center;
+}
+    .nav-wrapper ul li a{
+        text-align: center;
+    }
+    #table-wrapper {
+        position:relative;
+        height: 100px;
+    }
+}
+

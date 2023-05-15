@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>Szpital</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.4.5/spectre.min.css" integrity="sha512-ixkV1XQlIe5qFmlGKThyYFBm14zZe2j2Rn/Pl+xNKCQxsPviyGFCE6I9LLx8H57quHN5pgGh0jVrlE+sv/satQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./Style.css" />
+</head>
+<style>
+  .bottomList{
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    height: 100%;
+  }
+  .topList li a{
+    white-space: nowrap;
+    text-decoration: none;
+  }
+  .topList ul{
+    white-space: nowrap;
+  }
+  .lekarzImg{
+
+    align-content: center;
+    text-align: center;
+    display: flex;
+  }
+  .lekarzImg img{
+    display: flex;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+
+  }
+  .secondHalf{
+    width: 50%;
+    height: 100%;
+    float: left;
+  }
+  .firstHalf{
+    width: 50%;
+    height: 100%;
+    float: left;
+  }
+  .wrapper {
+    height: 100vh;
+    display: flex;
+
+    /* Direction of the items, can be row or column */
+    flex-direction: column;
+  }
+
+</style>
+<body>
+<div class="wrapper">
+  <header>
+    <div>
+
+    </div >
+    <nav class="nav-wrapper">
+      <h1 style="padding: 10px 25px">Szpital</h1>
+      <ul>
+        <li><a href="/">Strona główna</a></li>
+        <li><a href="/employees">Pracownicy</a></li>
+        <li><a href="/dept">Oddziały</a></li>
+        <li><a href="/patients">Pacjenci</a></li>
+        <li><a href="/employments">Zatrudnienie</a> </li>
+      </ul>
+      <img src="../logo.png">
+    </nav>
+
+  </header>
+  <main>
+    <!--<div class="firstHalf">
+        Szpital – jedna z najważniejszych jednostek organizacyjnych w systemie opieki zdrowotnej.
+        W szpitalu udziela się świadczeń zdrowotnych w warunkach zamkniętych. Najważniejszym zadaniem szpitali jest leczenie pacjentów,
+        ale oprócz tego zajmują się opieką zdrowotną ludzi zdrowych, np. szpitale położnicze. Przy szpitalu często ulokowane są także przychodnie ambulatoryjne i zakłady
+        diagnostyczne. W szpitalu pacjent otrzymuje całodobową lub jednodniową opiekę lekarską oraz pielęgniarską. Niektóre szpitale, szczególnie szpitale akademickie, zajmują
+        się prowadzeniem dydaktyki przed- i podyplomowej.
+    </div>
+
+     <div class="secondHalf">
+         <div class="lekarzImg">
+             <img src="./Lekarz.jpg">
+         </div>
+     </div>-->
+    <div class="table">
+
+      <div class="tableAdd">
+        <h2 class="titleContent" id="demo">Szpital</h2>
+
+        Witaj w szpitalu
+
+
+        <% if(!locals.loggedUser) { %>
+
+        <div id="login">
+          <h5>Logowanie</h5>
+          <form method="post" action="/login" novalidate>
+
+            <label for="loginEmail">Email :</label>
+            <input type="email" id="loginEmail" name="email"/>
+
+            <label for="loginPassword">Hasło :</label>
+            <input type="text" id="loginPassword" name="password"/>
+            <div style="text-align: center">
+            <input type="submit" value="Zaloguj się"/>
+              <br><br>
+            <span id="loginErrors" style="color: red"><%= locals.loginError ? locals.loginError : ''%></span>
+            </div>
+
+          </form>
+        </div>
+
+        <% } else { %>
+        <br><br>
+        <h3><span>Jesteś zalogowany jako: <span><%=locals.loggedUser.imie + " " + locals.loggedUser.nazwisko%></span></span></h3>
+        <a href="/logout">Wyloguj się</a>
+        <% } %>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="bottomList">
+      <nav class="bottomWrapper">
+        Piotr Żmuda s21588
+      </nav>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
